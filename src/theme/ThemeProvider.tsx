@@ -13,19 +13,17 @@ import { ThemeProvider as MuiThemeProvider, CssBaseline } from "@mui/material";
 
 type ModeType = "dark" | "light";
 
-// color design tokens export
 export const tokens = (mode: ModeType) => ({
   ...(mode === "dark" ? darkConfig : lightConfig),
 });
 
 const fontFamily = ["Roboto", "sans-serif"].join(",");
 
-// mui theme settings
 export const themeSettings = (mode: ModeType) => {
   const colors = tokens(mode);
   return {
     palette: {
-      mode: mode,
+      mode,
       ...(mode === "dark"
         ? {
             primary: {

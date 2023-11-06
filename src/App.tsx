@@ -1,10 +1,11 @@
 import Layout from "./layout/Layout";
+import Router from "./router/Router";
 
 function App() {
   return (
     <div>
       <Layout>
-        <div>in app!!!</div>
+        <Router />
       </Layout>
     </div>
   );
