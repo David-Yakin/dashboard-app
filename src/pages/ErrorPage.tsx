@@ -12,7 +12,7 @@ const ErrorPage = () => {
   const theme = useTheme();
 
   return (
-    <Container>
+    <Container sx={{ height: "100%" }}>
       <Typography variant="h2" component="h1">
         Error 404
       </Typography>

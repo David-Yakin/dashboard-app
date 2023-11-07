@@ -15,7 +15,7 @@ const Topbar = () => {
   const toggleTheme = useTheme();
 
   return (
-    <Box display="flex" justifyContent="space-between" p={2}>
+    <Box display="flex" justifyContent="space-between" p={2} flexGrow={0}>
       {/* SEARCH BAR */}
       <Box
         display="flex"

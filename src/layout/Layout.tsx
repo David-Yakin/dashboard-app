@@ -8,13 +8,13 @@ type LayoutProps = { children: JSX.Element[] | JSX.Element };
 
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
-    <Box>
+    <>
       <Sidebar />
-      <Box>
+      <Box className="main">
         <Topbar />
         <Main>{children}</Main>
       </Box>
-    </Box>
+    </>
   );
 };
 
