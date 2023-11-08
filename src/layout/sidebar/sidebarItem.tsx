@@ -23,18 +23,17 @@ const SideItem: FC<SideItemProps> = ({
   const colors = tokens(theme.palette.mode);
 
   return (
-    <Link to={to}>
-      <MenuItem
-        active={selected === title}
-        style={{
-          color: colors.grey[100],
-        }}
-        onClick={() => setSelected(title)}
-        icon={icon}
-      >
-        <Typography>{title}</Typography>
-      </MenuItem>
-    </Link>
+    <MenuItem
+      component={<Link to={to} />}
+      active={selected === title}
+      style={{
+        color: colors.grey[100],
+      }}
+      onClick={() => setSelected(title)}
+      icon={icon}
+    >
+      <Typography>{title}</Typography>
+    </MenuItem>
   );
 };
 

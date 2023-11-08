@@ -24,28 +24,21 @@ const Sidebar = () => {
   const [selected, setSelected] = useState("Dashboard");
 
   return (
-    <Box
-      sx={{
-        "& .pro-sidebar-inner": {
-          background: `${colors.primary[400]} !important`,
-        },
-        "& .pro-icon-wrapper": {
-          backgroundColor: "transparent !important",
-        },
-        "& .pro-inner-item": {
-          padding: "5px 35px 5px 20px !important",
-        },
-        "& .pro-inner-item:hover": {
-          color: "#868dfb !important",
-        },
-        "& .pro-menu-item.active": {
-          color: "#6870fa !important",
-        },
-        flexGrow: 0,
-      }}
-    >
-      <ProSidebar collapsed={isCollapsed} backgroundColor="transparent">
-        <Menu>
+    <Box sx={{ flexGrow: 0 }}>
+      <ProSidebar
+        collapsed={isCollapsed}
+        backgroundColor="transparent"
+        style={{ height: "100vh" }}
+      >
+        <Menu
+          menuItemStyles={{
+            button: {
+              ["&:hover"]: {
+                backgroundColor: colors.primary[900],
+              },
+            },
+          }}
+        >
           <MenuItem
             onClick={() => setIsCollapsed(!isCollapsed)}
             icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
@@ -62,7 +55,7 @@ const Sidebar = () => {
                 ml="15px"
               >
                 <Typography variant="h3" color={colors.grey[100]}>
-                  ADMINIS
+                  DASHBOARD
                 </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
@@ -89,7 +82,7 @@ const Sidebar = () => {
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
-                  Ed Roh
+                  David Yakin
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
                   VP Fancy Admin
@@ -98,7 +91,7 @@ const Sidebar = () => {
             </Box>
           )}
 
-          <Box paddingLeft={isCollapsed ? undefined : "10%"}>
+          <Box paddingLeft={isCollapsed ? undefined : "0"}>
             <SideItem
               title="Dashboard"
               to="/"
